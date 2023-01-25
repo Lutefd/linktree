@@ -2,6 +2,16 @@ import Head from 'next/head';
 import Image from 'next/image';
 import data from '../data.json';
 
+function LinkCard({ href, title }: { href: string; title: string }) {
+  return (
+    <a
+      href={href}
+      className="flex items-center p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+    >
+      <h2 className="text-xl font-bold">{title}</h2>
+    </a>
+  );
+}
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center mx-auto">
