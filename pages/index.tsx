@@ -86,7 +86,7 @@ export default function Home() {
       {data.links.map((link) => (
         <LinkCard key={link.href} {...link} />
       ))}
-      <div className="flex">
+      <div className="flex gap-1 items-center mt-8 ">
         {data.socials.map((link) => (
           <Socials key={link.href} {...link} />
         ))}
