@@ -14,7 +14,7 @@ function LinkCard({
   return (
     <a
       href={href}
-      className="flex items-center p-1 rounded-md hover:shadow-xl  transition-shadow duration-300 w-full mb-3 bg-white hover:bg-opacity-60 hover:text-blue-500"
+      className="flex items-center p-1 rounded-md hover:shadow-xl  transition-shadow duration-300 w-full mb-3 bg-white hover:bg-opacity-60 hover:text-blue-500 md:max-w-3xl"
       target="_blank"
       rel="noreferrer"
     >
@@ -39,7 +39,7 @@ function LinkCard({
 }
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center mx-auto mt-16 px-8 ">
+    <div className="flex flex-col items-center justify-center mx-auto mt-16 px-8">
       <Head>
         <title>Links | {data.name}</title>
       </Head>
