@@ -19,11 +19,13 @@
   "socials": [
     {
       "title": "Twitter",
-      "href": "https://twitter.com/Luistebaf"
+      "href": "https://twitter.com/Luistebaf",
+      "image": "/twitter.svg"
     },
     {
       "title": "GitHub",
-      "href": "https://github.com/Lutefd"
+      "href": "https://github.com/Lutefd",
+      "image": "/github.svg"
     }
   ]
 }
