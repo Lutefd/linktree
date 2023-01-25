@@ -1,0 +1,24 @@
+{
+  "name": "Luis Dourado",
+  "avatar": "https://pbs.twimg.com/profile_images/1278828916862582784/DuFcUpTj_400x400.jpg",
+  "links": [
+    {
+      "title": "Personal Website",
+      "url": "https://luisdourado.com"
+    },
+    {
+      "title": "Blog",
+      "url": "https://luisdourado.com/blog"
+    }
+  ],
+  "socials": [
+    {
+      "title": "Twitter",
+      "url": "https://twitter.com/Luistebaf"
+    },
+    {
+      "title": "GitHub",
+      "url": "https://github.com/Lutefd"
+    }
+  ]
+}
