@@ -37,6 +37,38 @@ function LinkCard({
     </a>
   );
 }
+function Socials({
+  href,
+  title,
+  image,
+}: {
+  href: string;
+  title: string;
+  image?: string;
+}) {
+  return (
+    <a
+      href={href}
+      className="flex items-center p-1 rounded-md"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <div className="flex w-full text-center">
+        <div className="w-6 h-6 ">
+          {image && (
+            <Image
+              alt={title}
+              src={image}
+              width={24}
+              height={24}
+              className="rounded-md"
+            />
+          )}
+        </div>
+      </div>
+    </a>
+  );
+}
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center mx-auto mt-16 px-8">
@@ -54,6 +86,11 @@ export default function Home() {
       {data.links.map((link) => (
         <LinkCard key={link.href} {...link} />
       ))}
+      <div className="flex">
+        {data.socials.map((link) => (
+          <Socials key={link.href} {...link} />
+        ))}
+      </div>
     </div>
   );
 }
