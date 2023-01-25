@@ -7,6 +7,8 @@ function LinkCard({ href, title }: { href: string; title: string }) {
     <a
       href={href}
       className="flex items-center p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+      target="_blank"
+      rel="noreferrer"
     >
       <h2 className="text-xl font-bold">{title}</h2>
     </a>
@@ -23,6 +25,9 @@ export default function Home() {
         className="rounded-full mt-10"
       />
       <h1 className="mt-4 text-2xl font-bold">{data.name}</h1>
+      {data.links.map((link) => (
+        <LinkCard key={link.href} {...link} />
+      ))}
     </div>
   );
 }
