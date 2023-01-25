@@ -2,21 +2,44 @@ import Head from 'next/head';
 import Image from 'next/image';
 import data from '../data.json';
 
-function LinkCard({ href, title }: { href: string; title: string }) {
+function LinkCard({
+  href,
+  title,
+  image,
+}: {
+  href: string;
+  title: string;
+  image?: string;
+}) {
   return (
     <a
       href={href}
-      className="flex items-center p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+      className="flex items-center p-1 rounded-md hover:shadow-xl  transition-shadow duration-300 w-full mb-3 bg-white hover:bg-opacity-60 hover:text-blue-500"
       target="_blank"
       rel="noreferrer"
     >
-      <h2 className="text-xl font-bold">{title}</h2>
+      <div className="flex w-full text-center">
+        <div className="w-10 h-10">
+          {image && (
+            <Image
+              alt={title}
+              src={image}
+              width={40}
+              height={40}
+              className="rounded-md self-start"
+            />
+          )}
+        </div>
+        <h2 className="flex justify-center items-center font-semibold w-full -ml-10">
+          {title}
+        </h2>
+      </div>
     </a>
   );
 }
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center mx-auto">
+    <div className="flex flex-col items-center justify-center mx-auto mt-16 px-8 ">
       <Image
         alt={data.name}
         src={data.avatar}
@@ -24,7 +47,7 @@ export default function Home() {
         height={120}
         className="rounded-full mt-10"
       />
-      <h1 className="mt-4 text-2xl font-bold">{data.name}</h1>
+      <h1 className="mt-4 text-2xl mb-8 font-bold text-white">{data.name}</h1>
       {data.links.map((link) => (
         <LinkCard key={link.href} {...link} />
       ))}
