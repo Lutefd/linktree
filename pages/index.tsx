@@ -40,6 +40,9 @@ function LinkCard({
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center mx-auto mt-16 px-8 ">
+      <Head>
+        <title>Links | {data.name}</title>
+      </Head>
       <Image
         alt={data.name}
         src={data.avatar}
