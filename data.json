@@ -4,21 +4,21 @@
   "links": [
     {
       "title": "Personal Website",
-      "url": "https://luisdourado.com"
+      "href": "https://luisdourado.com"
     },
     {
       "title": "Blog",
-      "url": "https://luisdourado.com/blog"
+      "href": "https://luisdourado.com/blog"
     }
   ],
   "socials": [
     {
       "title": "Twitter",
-      "url": "https://twitter.com/Luistebaf"
+      "href": "https://twitter.com/Luistebaf"
     },
     {
       "title": "GitHub",
-      "url": "https://github.com/Lutefd"
+      "href": "https://github.com/Lutefd"
     }
   ]
 }
