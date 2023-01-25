@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import data from '../data.json';
+import { get } from '@vercel/edge-config';
+import { interpolateAs } from 'next/dist/shared/lib/router/router';
+import { redirect } from 'next/navigation';
 
 function LinkCard({
   href,
@@ -61,7 +63,7 @@ function Socials({
               src={image}
               width={24}
               height={24}
-              className="rounded-md"
+              className="rounded-md "
             />
           )}
         </div>
@@ -69,7 +71,30 @@ function Socials({
     </a>
   );
 }
-export default function Home() {
+
+interface Data {
+  name: string;
+  avatar: string;
+  links: Link[];
+  socials: Socials[];
+}
+interface Link {
+  href: string;
+  title: string;
+  image?: string;
+}
+interface Socials {
+  href: string;
+  title: string;
+  image?: string;
+}
+export default async function Home() {
+  const data = await get('linktree');
+
+  if (!data) {
+    redirect('https://luisdourado.com');
+  }
+
   return (
     <div className="flex flex-col items-center justify-center mx-auto mt-16 px-8">
       <Image
@@ -80,12 +105,12 @@ export default function Home() {
         className="rounded-full mt-10"
       />
       <h1 className="mt-4 text-2xl mb-8 font-bold text-white">{data.name}</h1>
-      {data.links.map((link) => (
+      {data.links.map((link: Link) => (
         <LinkCard key={link.href} {...link} />
       ))}
-      <div className="flex gap-1 items-center mt-8 ">
-        {data.socials.map((link) => (
-          <Socials key={link.href} {...link} />
+      <div className="flex gap-1 items-center mt-8">
+        {data.socials.map((social: Socials) => (
+          <Socials key={social.href} {...social} />
         ))}
       </div>
     </div>
