@@ -4,11 +4,16 @@
   "links": [
     {
       "title": "Site Pessoal",
-      "href": "https://luisdourado.com"
+      "href": "https://luisdourado.com",
+      "image": "https://www.luisdourado.com/assets/images/home/classic-hero.jpg"
     },
     {
       "title": "Blog",
       "href": "https://luisdourado.com/blog"
+    },
+    {
+      "title": "Trampaê",
+      "href": "https://trampae.tech"
     }
   ],
   "socials": [
